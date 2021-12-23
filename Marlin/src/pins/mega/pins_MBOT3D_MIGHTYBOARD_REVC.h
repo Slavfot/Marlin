@@ -195,9 +195,9 @@
 //#define CONTROLLER_FAN_PIN                     // Should be defined?
 //#define CHAMBER_FAN_PIN                        // don't know if this is neede or if it is defined by chamber fan index in configuration_adv
 #define FAN_PIN                   EXTRA_FET2_PIN // FAN NOZZLE
-#define FAN2_PIN                     EX2_FAN_PIN // FANS CHAMBER (set to controller fan) contorllerfan.cpp editetd to enable controller fan with chamber
-#define FAN3_PIN                   EXTRA_FET_PIN // FAN EXHAUST  (Set to chamber fan) exhausts the hot air from the chamber when too hot
-#define FAN4_PIN                     EX1_FAN_PIN // FAN EXTRUDER (Controller fan, wire to the same as Chamber Fans)
+#define FAN1_PIN                     EX2_FAN_PIN // FANS CHAMBER (set to controller fan) contorllerfan.cpp editetd to enable controller fan with chamber
+#define FAN2_PIN                   EXTRA_FET_PIN // FAN EXHAUST  (Set to chamber fan) exhausts the hot air from the chamber when too hot
+#define FAN3_PIN                     EX1_FAN_PIN // FAN EXTRUDER (Controller fan, wire to the same as Chamber Fans)
 
 /* Delete this?
 #if ENABLED(IS_EFB)                               // Hotend, Fan, Bed
