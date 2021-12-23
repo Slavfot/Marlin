@@ -40,6 +40,7 @@ uint8_t ControllerFan::speed;
 
 void ControllerFan::setup() {
   SET_OUTPUT(CONTROLLER_FAN_PIN);
+  SET_OUTPUT(CONTROLLER_FAN2_PIN);
   init();
 }
 
@@ -61,6 +62,7 @@ void ControllerFan::update() {
     const ena_mask_t axis_mask = TERN(CONTROLLER_FAN_USE_Z_ONLY, _BV(Z_AXIS), ~TERN0(CONTROLLER_FAN_IGNORE_Z, _BV(Z_AXIS)));
     if ( (stepper.axis_enabled.bits & axis_mask)
       || TERN0(HAS_HEATED_BED, thermalManager.temp_bed.soft_pwm_amount > 0)
+      || TERN0(HAS_TEMP_CHAMBER, thermalManager.temp_chamber.soft_pwm_amount >= 0)
       || TERN0(HAS_CONTROLLER_FAN_MIN_BOARD_TEMP, thermalManager.wholeDegBoard() >= CONTROLLER_FAN_MIN_BOARD_TEMP)
     ) lastMotorOn = ms; //... set time to NOW so the fan will turn on
 
